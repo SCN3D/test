@@ -117,7 +117,7 @@ def showCluster(dataSet, k, centroids, clusterAssment):
 # step 1: 载入数据  
 print "step 1: load data..."  
 dataSet = []  
-fileIn = open('/testSet.txt')  
+fileIn = open('/home/dlg/JL/siteng/test/testSet.txt')  
 for line in fileIn.readlines():  
     lineArr = line.strip().split('\t')  
     dataSet.append([float(lineArr[0]), float(lineArr[1])])  
