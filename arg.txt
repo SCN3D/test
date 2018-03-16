@@ -1,0 +1,1 @@
+ python uniprotMongo.py -l test2.txt -db uniprot -col entry -f all

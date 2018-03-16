@@ -1,0 +1,1 @@
+*/2 * * * *  /usr/bin/python /home/ec2-user/test/uniprotMongo.py -l /home/ec2-user/test/test2.txt -db uniprot -col entry -f all
