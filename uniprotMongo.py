@@ -16,7 +16,7 @@ features = {
 dbname = ''
 colname = ''
 if arguments > 6 and arguments < 13 and sys.argv[1] == "-o" and sys.argv[2] == "-db" and sys.argv[4] == "-col" and sys.argv[6] == "-f":
-	input("online download")
+	print("online download")
 	if sys.argv[7] == 'all':
 		features = {'go' : 1,'interpro' : 1,'pfam' : 1,'prosite' : 1,'smart' : 1,'supfam' : 1}
 	else:
@@ -29,7 +29,7 @@ elif arguments > 7 and arguments < 14 and sys.argv[1] == "-l" and sys.argv[3] ==
 		# file exists
 		filepath = sys.argv[2]
 	else:
-		input("File does not exist\n")
+		print("File does not exist\n")
 		sys.exit()
 	if sys.argv[8] == 'all':
 		features = {'go' : 1,'interpro' : 1,'pfam' : 1,'prosite' : 1,'smart' : 1,'supfam' : 1}
@@ -39,7 +39,7 @@ elif arguments > 7 and arguments < 14 and sys.argv[1] == "-l" and sys.argv[3] ==
 	dbname = sys.argv[4]
 	colname = sys.argv[6]
 else:
-	input("Syntax:\nLocal file update: *.py -l filepath -db dbname -col collection_name -f [go,interpro,pfam,prosite,smart,supfam]\nOnline update: *.py -o -db dbname -col collection_name -f [go,interpro,pfam,prosite,smart,supfam]\n")
+	print("Syntax:\nLocal file update: *.py -l filepath -db dbname -col collection_name -f [go,interpro,pfam,prosite,smart,supfam]\nOnline update: *.py -o -db dbname -col collection_name -f [go,interpro,pfam,prosite,smart,supfam]\n")
 	
 
 #connect to mongodb
@@ -91,7 +91,7 @@ with open(filepath) as fp:
 			
 			out_data['sequence'] = sequence
 			collections.save(out_data)
-			input("Enter to continue")
+			print("insert!\n")
 			##rewind
 			id_flag = 0
 			ac_flag = 0
