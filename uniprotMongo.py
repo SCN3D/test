@@ -40,7 +40,7 @@ elif arguments > 7 and arguments < 14 and sys.argv[1] == "-l" and sys.argv[3] ==
 	colname = sys.argv[6]
 else:
 	input("Syntax:\nLocal file update: *.py -l filepath -db dbname -col collection_name -f [go,interpro,pfam,prosite,smart,supfam]\nOnline update: *.py -o -db dbname -col collection_name -f [go,interpro,pfam,prosite,smart,supfam]\n")
-	sys.exit()
+	
 
 #connect to mongodb
 client = MongoClient('localhost', 27017)
@@ -51,6 +51,7 @@ collections = db[colname]
 # Open a file
 id_flag = 0
 ac_flag = 0
+out_ac = []
 sequence = ''
 
 out_data = dict()
@@ -95,14 +96,7 @@ with open(filepath) as fp:
 			id_flag = 0
 			ac_flag = 0
 			out_ac = []
-			out_go = []
-			out_interpro = []
-			out_pfam = []
-			out_prosite = []
-			out_smart = []
-			out_supfam = []
 			sequence = '';
 		
 fp.close()
-input("Enter to close")
 	
