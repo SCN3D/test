@@ -40,7 +40,7 @@ elif arguments > 7 and arguments < 14 and sys.argv[1] == "-l" and sys.argv[3] ==
 	colname = sys.argv[6]
 else:
 	print("Syntax:\nLocal file update: *.py -l filepath -db dbname -col collection_name -f [go,interpro,pfam,prosite,smart,supfam]\nOnline update: *.py -o -db dbname -col collection_name -f [go,interpro,pfam,prosite,smart,supfam]\n")
-	
+	sys.exit()
 
 #connect to mongodb
 client = MongoClient('localhost', 27017)

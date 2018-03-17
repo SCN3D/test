@@ -21,7 +21,7 @@ if arguments > 9 and sys.argv[1] == "-l" and sys.argv[3] == "-db" and sys.argv[5
 		# file exists
 		filepath = sys.argv[2]
 	else:
-		input("File does not exist\n")
+		print("File does not exist\n")
 		sys.exit()
 	dbname = sys.argv[4]
 	colname = sys.argv[6]
@@ -33,7 +33,7 @@ if arguments > 9 and sys.argv[1] == "-l" and sys.argv[3] == "-db" and sys.argv[5
 		for i in range(10,arguments):
 			dictionary[sys.argv[i].lower()] = 1
 else:
-	input("Syntax:\n*.py -l filepath -db dbname -col collection_name -id primarykey_name -f [.....] or all\n")
+	print("Syntax:\n*.py -l filepath -db dbname -col collection_name -id primarykey_name -f [.....] or all\n")
 	sys.exit()
 
 #connect to mongodb
@@ -61,4 +61,4 @@ with open(filepath, encoding="utf8" ) as f:
 					out_data[field] = row[dictionary[field]]
 			collections.save(out_data)
 f.close()
-input("Enter to close")
+print("done!")
