@@ -42,7 +42,7 @@ client = MongoClient('localhost', 27017)
 db = client[dbname]
 collections = db[colname]
 out_data = dict()
-with open(filepath, encoding="utf8" ) as f:
+with open(filepath) as f:
 	csv_f = csv.reader(f)
 	for i, row in enumerate(csv_f):
 		print(i)
