@@ -20,7 +20,7 @@ if arguments > 6 and arguments < 13 and sys.argv[1] == "-o" and sys.argv[2] == "
 	if sys.argv[7] == 'all':
 		features = {'go' : 1,'interpro' : 1,'pfam' : 1,'prosite' : 1,'smart' : 1,'supfam' : 1}
 	else:
-		for i in range(7,arguments):
+		for i in range(7,arguments+1):
 			features[sys.argv[i]] = 1
 	dbname = sys.argv[3]
 	colname = sys.argv[5]
@@ -34,7 +34,7 @@ elif arguments > 7 and arguments < 14 and sys.argv[1] == "-l" and sys.argv[3] ==
 	if sys.argv[8] == 'all':
 		features = {'go' : 1,'interpro' : 1,'pfam' : 1,'prosite' : 1,'smart' : 1,'supfam' : 1}
 	else:
-		for i in range(8,arguments):
+		for i in range(8,arguments+1):
 			features[sys.argv[i]] = 1
 	dbname = sys.argv[4]
 	colname = sys.argv[6]
@@ -90,13 +90,15 @@ with open(filepath) as fp:
 			sequence = ''.join(sequence.split())
 			
 			out_data['sequence'] = sequence
+			
 			collections.save(out_data)
 			print("insert!\n")
 			##rewind
 			id_flag = 0
 			ac_flag = 0
 			out_ac = []
-			sequence = '';
+			sequence = ''
+			print(out_data)
 		
 fp.close()
 	
