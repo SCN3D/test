@@ -1,4 +1,7 @@
 #!/usr/bin/python
+#vm: amazon linux 2 AMI
+#python 2.7.5
+#mongodb 3.6.3
 import pymongo
 from pymongo import MongoClient
 import sys
