@@ -67,7 +67,7 @@ def updateMongoDB(filepath,features,collection):
 	fp.close()
 		
 def createCrontab(dbname, colname, features):
-	my_cron = CronTab()
+	my_cron = CronTab(user='ec2-user')
 	fs = ' '.join(features)
 	cmd = "/usr/bin/python /home/ec2-user/test/uniprotDB.py -l /home/ec2-user/test/test2.txt -db %s -col %s -f %s" % (dbname, colname, fs)
 	job = my_cron.new(command=cmd)
